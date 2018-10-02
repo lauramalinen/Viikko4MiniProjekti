@@ -31,7 +31,9 @@ namespace Viikko4MiniProjekti
             string s2 = BL.haeAsemaShortCode(comboBox2.SelectedItem.ToString());
 
             BL.junat = BL.rata.JunatVälillä(s, s2);  //Toimii tähän kohtaan
-            //listBox1.DataSource = 
+            listBox1.DataSource = BL.junat.
         }
+
+        
     }
 }

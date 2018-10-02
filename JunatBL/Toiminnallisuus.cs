@@ -27,5 +27,27 @@ namespace JunatBL
             string str = string.Join("", indexi.ToArray());
             return str;
         }
+
+        public List<DateTime> HaeJunanAikataulu()  // käsittellään tässä aseman lähtö ja saapumisaikataulu.
+        {
+            var tempList = new List<DateTime>();
+            foreach (var item in junat)
+            {
+                List<RataDigiTraffic.Model.Aikataulurivi> art = item.timeTableRows;
+                foreach (var i in art)
+                {
+                    if(i.stationShortCode=="TPE")
+                    tempList.Add(i.scheduledTime);
+                }
+            }
+            return tempList;
+        }
+
+        //public void HaeJunanTiedot()
+        //{
+        //    List<Juna> lista = new List<Juna>();
+        //    var aikataulu = HaeJunanAikataulu();
+        //    lista.Add(aikataulu);
+        //}
     }
 }
