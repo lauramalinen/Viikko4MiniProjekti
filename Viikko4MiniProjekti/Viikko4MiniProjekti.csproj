@@ -76,5 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RataDigiTraffic\RataDigiTraffic.csproj">
+      <Project>{539d9711-1e6f-4dc0-9cb3-6636a0c1a3b7}</Project>
+      <Name>RataDigiTraffic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
