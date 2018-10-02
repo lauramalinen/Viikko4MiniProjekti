@@ -30,8 +30,10 @@ namespace Viikko4MiniProjekti
             string s = BL.haeAsemaShortCode(comboBox1.SelectedItem.ToString());
             string s2 = BL.haeAsemaShortCode(comboBox2.SelectedItem.ToString());
 
-            BL.junat = BL.rata.JunatVälillä(s, s2);  //Toimii tähän kohtaan
-            //listBox1.DataSource = 
+            List<Juna> junat = BL.rata.JunatVälillä(s, s2);
+            string d = string.Join(", ", junat.Select(j => j.trainNumber + " " + j.trainType));
+            listBox1.DataSource = ($"Junat {s} ==> {s2}: " + d).ToList();
         }
+
     }
 }
