@@ -27,5 +27,9 @@ namespace JunatBL
             string str = string.Join("", indexi.ToArray());
             return str;
         }
+
+       
+        
+
     }
 }
