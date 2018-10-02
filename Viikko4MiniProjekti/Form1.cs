@@ -31,7 +31,28 @@ namespace Viikko4MiniProjekti
             string s2 = BL.haeAsemaShortCode(comboBox2.SelectedItem.ToString());
 
             BL.junat = BL.rata.JunatVälillä(s, s2);  //Toimii tähän kohtaan
-            //listBox1.DataSource = 
+            List<string> naytto = new List<string>();
+            IEnumerable<DateTime> haku = BL.junat.Select(p => p.timeTableRows)
+                .Select(tr => tr[0].scheduledTime);
+            DateTime[] ajat = haku.ToArray<DateTime>();
+            for (int i = 0; i < ajat.Length ; i++)
+            {
+                naytto.Add(ajat[i].ToShortTimeString()+" "+BL.junat[i].trainNumber);
+            }
+            listBox1.DataSource = naytto;
         }
+
+        void HaeJunat()
+        {
+            string[] rivit;
+            foreach (Juna juna in BL.junat)
+            {
+                foreach (Aikataulurivi item in juna.timeTableRows)
+                {
+                    string rivi = item.scheduledTime.ToShortTimeString();
+                }
+            }
+        }
+
     }
 }
