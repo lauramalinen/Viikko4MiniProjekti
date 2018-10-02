@@ -84,6 +84,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\JunatBL\JunatBL.csproj">
+      <Project>{a9870704-0ecb-48bf-a172-7e9fbf0afc62}</Project>
+      <Name>JunatBL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RataDigiTraffic\RataDigiTraffic.csproj">
       <Project>{539d9711-1e6f-4dc0-9cb3-6636a0c1a3b7}</Project>
       <Name>RataDigiTraffic</Name>
