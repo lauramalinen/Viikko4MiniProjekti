@@ -32,8 +32,8 @@ namespace Viikko4MiniProjekti
         {
             string s = haeAsemaShortCode(comboBox1.SelectedItem.ToString());
             string s2 = haeAsemaShortCode(comboBox2.SelectedItem.ToString());
-
             junat = rata.JunatVälillä(s, s2);  //Toimii tähän kohtaan
+            listBox1.DataSource = junat;
         }
 
         private string haeAsemaShortCode(string asema)
